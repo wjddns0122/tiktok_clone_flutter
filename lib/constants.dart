@@ -7,12 +7,12 @@ import 'package:tiktok/views/screens/auth/video_screen.dart';
 
 import 'controllers/auth_controller.dart';
 
-const pages = [
+List pages = [
   VideoScreen(),
-  Text('Search Screen'),
-  AddVideoScreen(),
-  Text('Messages Screen'),
-  Text('Profile Screen'),
+  const Text('Search Screen'),
+  const AddVideoScreen(),
+  const Text('Messages Screen'),
+  const Text('Profile Screen'),
 ];
 
 // COLORS
