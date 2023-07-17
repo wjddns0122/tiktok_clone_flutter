@@ -37,6 +37,12 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -80,14 +86,15 @@ class _ConfirmScreenState extends State<ConfirmScreen> {
                   height: 10,
                 ),
                 ElevatedButton(
-                    onPressed: () => uploadVideoController.uploadVideo(
-                        _songController.text,
-                        _captionController.text,
-                        widget.videoPath),
-                    child: const Text(
-                      'Share!',
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ))
+                  onPressed: () => uploadVideoController.uploadVideo(
+                      _songController.text,
+                      _captionController.text,
+                      widget.videoPath),
+                  child: const Text(
+                    'Share!',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ),
               ],
             ),
           )
