@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tiktok/views/screens/comment_screen.dart';
 
+import '../../../constants.dart';
 import '../../../controllers/video_controller.dart';
 import '../../widgets/circle_animation.dart';
 import '../../widgets/video_player_item.dart';
@@ -145,11 +147,15 @@ class VideoScreen extends StatelessWidget {
                                 Column(
                                   children: [
                                     InkWell(
-                                      onTap: () {},
-                                      child: const Icon(
+                                      onTap: () =>
+                                          videoController.likeVideo(data.id),
+                                      child: Icon(
                                         Icons.favorite,
                                         size: 40,
-                                        color: Colors.red,
+                                        color: data.likes.contains(
+                                                authController.user!.uid)
+                                            ? Colors.red
+                                            : Colors.white,
                                       ),
                                     ),
                                     const SizedBox(
@@ -165,7 +171,13 @@ class VideoScreen extends StatelessWidget {
                                 Column(
                                   children: [
                                     InkWell(
-                                      onTap: () {},
+                                      onTap: () => Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (context) => CommentScreen(
+                                            id: data.id,
+                                          ),
+                                        ),
+                                      ),
                                       child: const Icon(
                                         Icons.comment,
                                         size: 40,
