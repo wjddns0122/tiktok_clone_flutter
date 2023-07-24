@@ -5,12 +5,12 @@ import 'package:tiktok/constants.dart';
 import '../models/user.dart';
 
 class SearchController extends GetxController {
-  final Rx<List<User>> _searchUsers = Rx<List<User>>([]);
+  final Rx<List<User>> _searchedUsers = Rx<List<User>>([]);
 
-  List<User> get searchUsers => _searchUsers.value;
+  List<User> get searchedUsers => _searchedUsers.value;
 
   searchUser(String typedUser) async {
-    _searchUsers.bindStream(firestore
+    _searchedUsers.bindStream(firestore
         .collection('users')
         .where('name', isGreaterThanOrEqualTo: typedUser)
         .snapshots()
