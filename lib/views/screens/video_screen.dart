@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tiktok/views/screens/comment_screen.dart';
 
-import '../../../constants.dart';
-import '../../../controllers/video_controller.dart';
-import '../../widgets/circle_animation.dart';
-import '../../widgets/video_player_item.dart';
+import '../../constants.dart';
+import '../../controllers/video_controller.dart';
+import '../widgets/circle_animation.dart';
+import '../widgets/video_player_item.dart';
 
 class VideoScreen extends StatelessWidget {
   VideoScreen({super.key});

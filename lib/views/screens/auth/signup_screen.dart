@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tiktok/views/screens/auth/login_screen.dart';
 
 import '../../../constants.dart';
 import '../../widgets/text_input_field.dart';
@@ -38,7 +39,7 @@ class SignupScreen extends StatelessWidget {
                   radius: 64,
                   backgroundColor: Colors.black,
                   backgroundImage: NetworkImage(
-                    'https://i.namu.wiki/i/1qw3h7kT7UX47Ms2rU0tt32PhsprNT5LKKrX2Xc08nHE5DTUxACuTf_qtfJ6q-N8TfbU-hgWBXpLsG-BsE_HBAExyV-Z5Zo6Ypr-eRW8Bsh3IWOIEMQTq5e0wHmSndZOQnflaAqk_QeAryuMkjcbKw.webp',
+                    'https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png',
                   ),
                 ),
                 Positioned(
@@ -121,9 +122,11 @@ class SignupScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 20),
                 ),
                 InkWell(
-                  onTap: () {
-                    print('navigating User');
-                  },
+                  onTap: () => Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  ),
                   child: Text(
                     'Login',
                     style: TextStyle(fontSize: 20, color: buttonColor),

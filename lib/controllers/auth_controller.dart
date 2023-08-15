@@ -44,7 +44,7 @@ class AuthController extends GetxController {
     _pickedImage = Rx<File?>(File(pickedImage!.path));
   }
 
-  // upload to firebase storage
+  // 파이어 베이스 스토리지에 업로드 asynchronous
   Future<String> _uploadToStorage(File image) async {
     Reference ref = firebaseStorage
         .ref()
@@ -98,5 +98,9 @@ class AuthController extends GetxController {
     } catch (e) {
       Get.snackbar('Error Log in', e.toString());
     }
+  }
+
+  void signOut() async {
+    await firebaseAuth.signOut();
   }
 }
