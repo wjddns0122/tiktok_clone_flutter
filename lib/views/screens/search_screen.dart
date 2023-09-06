@@ -8,7 +8,7 @@ import '../../models/user.dart';
 class SearchScreen extends StatelessWidget {
   SearchScreen({Key? key}) : super(key: key);
 
-  final SearchController searchController = Get.put(SearchController());
+  final SearchedController searchController = Get.put(SearchedController());
 
   @override
   Widget build(BuildContext context) {

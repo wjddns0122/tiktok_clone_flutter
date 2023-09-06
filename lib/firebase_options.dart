@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -46,31 +49,23 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBEJ9TzxtxyBlugpFyYEXakGWEbPQWxQ-Q',
-    appId: '1:845536969093:web:be6749b83f86055fce04ec',
-    messagingSenderId: '845536969093',
-    projectId: 'tiktok-a13b2',
-    authDomain: 'tiktok-a13b2.firebaseapp.com',
-    storageBucket: 'tiktok-a13b2.appspot.com',
-    measurementId: 'G-YK6FXFSG9B',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBC_CcXKtzm90kcdGnrUVwKQ1ssc-JVV1I',
-    appId: '1:845536969093:android:4956be0619b0f487ce04ec',
-    messagingSenderId: '845536969093',
-    projectId: 'tiktok-a13b2',
-    storageBucket: 'tiktok-a13b2.appspot.com',
+    apiKey: 'AIzaSyCG8JT_94oxfB7OLYqtII5F74CyhcEzgc0',
+    appId: '1:641305189985:android:314e2d909be9c52f0d5420',
+    messagingSenderId: '641305189985',
+    projectId: 'tiktok-3c650',
+    databaseURL: 'https://tiktok-3c650-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'tiktok-3c650.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAe4dqyc64lyFewANsy8QHp6fTA-cjdCeg',
-    appId: '1:845536969093:ios:a82dc6c476ebbc86ce04ec',
-    messagingSenderId: '845536969093',
-    projectId: 'tiktok-a13b2',
-    storageBucket: 'tiktok-a13b2.appspot.com',
-    iosClientId: '845536969093-4q3rrv623qor4pbn9a1u2tv016og3b79.apps.googleusercontent.com',
+    apiKey: 'AIzaSyB3iRiD2uj3rNGp9GikwKdzBxx0usJs97U',
+    appId: '1:641305189985:ios:0e519a5d6f90995b0d5420',
+    messagingSenderId: '641305189985',
+    projectId: 'tiktok-3c650',
+    databaseURL: 'https://tiktok-3c650-default-rtdb.asia-southeast1.firebasedatabase.app',
+    storageBucket: 'tiktok-3c650.appspot.com',
+    iosClientId: '641305189985-s0n444393f0c69nee7ocge4e4fk17md0.apps.googleusercontent.com',
     iosBundleId: 'com.example.tiktok',
   );
 }

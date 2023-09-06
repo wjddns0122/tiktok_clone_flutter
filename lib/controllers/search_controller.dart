@@ -4,7 +4,7 @@ import 'package:tiktok/constants.dart';
 
 import '../models/user.dart';
 
-class SearchController extends GetxController {
+class SearchedController extends GetxController {
   final Rx<List<User>> _searchedUsers = Rx<List<User>>([]);
 
   List<User> get searchedUsers => _searchedUsers.value;
